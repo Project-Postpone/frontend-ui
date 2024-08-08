@@ -18,8 +18,9 @@ const LandingPage = () => {
             </nav>
             <div className="flex flex-col items-center justify-center text-center w-full flex-1">
                 <h1 className="text-4xl font-bold mb-4">Write a letter to your future self</h1>
-                <form className="bg-white text-black p-6 rounded shadow-md w-full max-w-lg">
+                <form className="bg-white text-black p-6 rounded shadow-md w-full max-w-[800px] m-10">
                     <textarea className="w-full p-2 mb-4 border rounded" rows="10" placeholder="Dear FutureMe,"></textarea>
+                    
                     <div className="flex mb-4">
                         <label className="mr-2">Deliver in</label>
                         <select className="p-2 border rounded">
