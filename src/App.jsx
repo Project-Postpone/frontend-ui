@@ -6,10 +6,21 @@ import LogIn from './components/logIn'
 import SignUp from './components/signUp'
 import ScheduledMails from './pages/dashboard/pages/scheduledMails'
 import SendEmail from './pages/dashboard/pages/sendEmail'
+import LandingPage from './components/landingPage'
+import Navbar from './components/navBar'
 
 function App() {
 
   const router = createBrowserRouter([
+
+    {
+      index:true,
+      element:<LandingPage/>
+    },
+    {
+      path:"navbar",
+      element:<Navbar/>
+    },
     {
       path: '/login',
       element: <LogIn />
