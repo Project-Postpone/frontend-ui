@@ -30,11 +30,11 @@ function App() {
       element: <DashBoardLayout/>,
       children:[
         {
-        path :"/scheduledmails",
+        index :"true",
         element:<ScheduledMails/>
         },
         {
-          path:"/sendmail",
+          index:"/dashboard",
           element:<SendEmail/>
         }
       ]
