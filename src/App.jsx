@@ -7,7 +7,7 @@ import SignUp from './components/signUp'
 import ScheduledMails from './pages/dashboard/pages/scheduledMails'
 import SendEmail from './pages/dashboard/pages/sendEmail'
 import LandingPage from './components/landingPage'
-import Navbar from './components/navBar'
+
 
 function App() {
 
@@ -16,10 +16,6 @@ function App() {
     {
       index:true,
       element:<LandingPage/>
-    },
-    {
-      path:"navbar",
-      element:<Navbar/>
     },
     {
       path: '/login',
@@ -34,11 +30,11 @@ function App() {
       element: <DashBoardLayout/>,
       children:[
         {
-        index :"true",
+        path :"/scheduledmails",
         element:<ScheduledMails/>
         },
         {
-          index:"/dashboard",
+          path:"/sendmail",
           element:<SendEmail/>
         }
       ]
