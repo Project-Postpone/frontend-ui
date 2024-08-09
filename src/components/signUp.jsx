@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+// import img1 from "../assets/images/img1.jpg"
+
 
 function Copyright() {
   return (
     <p className="text-center text-gray-600 text-sm mt-5">
       {'Copyright © '}
-      <a className="text-blue-500" href="https://mui.com/">
-       Postpone
+      <a className="text-blue-500" href="">
+        Postpone
       </a>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -39,6 +41,9 @@ export default function SignUp() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-md">
         <div className="bg-white shadow-md rounded-lg p-8">
+        {/* <div>
+            <img src="img1" alt='' className="w-32 mx-auto" />
+          </div> */}
           <div className="flex justify-center mb-4">
             <div className="bg-blue-500 p-3 rounded-full">
               <svg
@@ -150,8 +155,8 @@ export default function SignUp() {
               Sign Up
             </button>
             <div className="flex justify-end mt-4">
-              <a href="#" className="text-sm text-blue-500 hover:text-blue-700">
-                Already have an account? Sign in
+              <a href="/login" className="text-sm text-blue-500 hover:text-blue-700">
+                Already have an account? Log in
               </a>
             </div>
           </form>

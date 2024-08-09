@@ -7,6 +7,7 @@ import SignUp from './components/signUp'
 import ScheduledMails from './pages/dashboard/pages/scheduledMails'
 import SendEmail from './pages/dashboard/pages/sendEmail'
 import LandingPage from './components/landingPage'
+import Contact from './components/contact'
 
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
     {
       path: '/signup',
       element:<SignUp/>
+    },
+    {
+      path:"/contact",
+      element:<Contact/>
     },
     {
       path:"/dashboard",

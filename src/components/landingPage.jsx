@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
     return (
-        <div className="bg-blue-600 min-h-screen flex flex-col items-center text-white">
-            <nav className="w-full flex justify-between items-center p-4 bg-blue-800">
+        <div className="bg-blue-300 min-h-screen flex flex-col items-center text-white">
+            <nav className="w-full flex justify-between items-center p-4 bg-blue-400">
                 <div className="text-2xl font-bold">Postpone</div>
                 <div className="space-x-4">
                     <Link to="/write-letter" className="hover:underline">Write a Letter</Link>
                     <Link to="/read-public-letters" className="hover:underline">Read Public Letters</Link>
-                    <Link to="/education" className="hover:underline">Education</Link>
-                    <Link to="/business" className="hover:underline">Business</Link>
+                    {/* <Link to="/education" className="hover:underline">Education</Link>
+                    <Link to="/business" className="hover:underline">Business</Link> */}
                     <Link to="/contact" className="hover:underline">Contact</Link>
                     <Link to="/signup" className="hover:underline">Sign Up</Link>
                     <Link to="/login" className="hover:underline">Login</Link>
