@@ -203,7 +203,7 @@ const Login = () => {
           </button>
 
           <div className="mt-10 text-sm border-b border-gray-500 py-5">
-          <a href="#" class="text-xs text-black hover:text-[#002D74]">Forget Password?</a>
+          <a href="/forgotpassword" class="text-xs text-black hover:text-[#002D74]">Forget Password?</a>
           </div>
 
           <div className="mt-4 text-sm flex justify-between items-center">
@@ -212,8 +212,7 @@ const Login = () => {
             </p>
             <button
               className="hover:border text-white bg-[#002D74] hover:border-white rounded-xl py-2 px-5 hover:scale-110 hover:bg-blue-300 font-semibold duration-300 animate-bounce"
-            >
-              Register
+            ><a href="/signup" class="text-xs text-black hover:text-[#002D74]">Sign Up</a>
             </button>
           </div>
         </div>

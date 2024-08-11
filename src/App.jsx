@@ -8,6 +8,8 @@ import ScheduledMails from './pages/dashboard/pages/scheduledMails'
 import SendEmail from './pages/dashboard/pages/sendEmail'
 import LandingPage from './components/landingPage'
 import Contact from './components/contact'
+import ForgotPassword from './components/forgotPassword'
+import WriteLetter from './pages/writeLetter'
 
 
 function App() {
@@ -17,6 +19,10 @@ function App() {
     {
       index:true,
       element:<LandingPage/>
+    },
+    {
+      path:"/writeletter",
+      element:<WriteLetter/>
     },
     {
       path: '/login',
@@ -29,6 +35,10 @@ function App() {
     {
       path:"/contact",
       element:<Contact/>
+    },
+    {
+      path:"/forgotpassword",
+      element:<ForgotPassword/>
     },
     {
       path:"/dashboard",
