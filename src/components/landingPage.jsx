@@ -1,7 +1,7 @@
 import { LucideYoutube } from 'lucide-react';
 import React from 'react'
 import { Link } from 'react-router-dom';
-import img3 from "../assets/images/img3.png"
+import img2 from "../assets/images/img2.png"
 import woman from "../assets/images/woman.mp4"
 
 const LandingPage = () => {
@@ -71,7 +71,7 @@ const LandingPage = () => {
 
                         </div>
                         <div className="w-full h-[550px] md:w-1/2 flex justify-center md:justify-end m-10">
-                            <img src={img3} alt="Hero" />
+                            <img src={img2} alt="Hero" />
                         </div>
                     </div>
                 </div>
