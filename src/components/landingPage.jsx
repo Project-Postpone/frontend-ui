@@ -1,13 +1,13 @@
 import { LucideYoutube } from 'lucide-react';
 import React from 'react'
 import { Link } from 'react-router-dom';
-import img2 from "../assets/images/img2.png"
+import img2 from "../assets/images/img2.jpg"
 import woman from "../assets/images/woman.mp4"
 
 const LandingPage = () => {
     return (
-        <div className="bg-blue-300 min-h-screen flex flex-col items-center text-white">
-            <nav className="w-full flex justify-between items-center p-4 bg-blue-400">
+        <div className="min-h-screen flex flex-col items-center text-white">
+            <nav className="w-full flex justify-between items-center p-4 bg-blue-700">
                 <div className="text-2xl font-bold">Postpone</div>
                 <div className="space-x-4">
                     <Link to="/writeletter" className="hover:underline">Write a Letter</Link>
@@ -19,7 +19,7 @@ const LandingPage = () => {
                     <Link to="/login" className="hover:underline">Login</Link>
                 </div>
             </nav>
-            <div className="flex flex-col items-center justify-center text-center w-full flex-1">
+            <div className="flex flex-col items-center justify-center text-center w-full flex-1 bg-blue-700">
                 <h1 className="text-4xl font-bold mb-4">Write a letter to your future self</h1>
                 <form className="bg-white text-black p-6 rounded shadow-md w-full max-w-[800px] m-10">
                     <textarea className="w-full p-2 mb-4 border rounded" rows="10" placeholder="Dear FutureMe,"></textarea>
@@ -81,7 +81,7 @@ const LandingPage = () => {
                     <img src="https://loremflickr.com/g/600/600/girl"/>
                 </div> */}
             </section>
-            <section className="text-gray-700 body-font">
+            <section className="text-gray-700 body-font bg-blue-700 w-full">
       <div className="flex justify-center mt-10 text-4xl  text-black font-regular">
         Why Us?
       </div>
@@ -122,7 +122,7 @@ const LandingPage = () => {
               <div className="flex justify-center">
                 <img
                   src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp"
-                  className="w-32 mb-3"
+                  className="w-32 mb-3 fill-blue-700"
                   alt="Time Efficiency"
                 />
               </div>
@@ -175,14 +175,15 @@ const LandingPage = () => {
                     </video>
                 </div>
             </section> */}
-            {/* <div className="relative overflow-hidden bg-gray-900 pt-16 pb-32 space-y-24"> */}
+
+            <section className="relative overflow-hidden bg-blue-300 w-full pt-16 pb-32 space-y-24">
             {/* First Feature */}
-            <div className="relative">
+            <div className="relative bg-blue-300">
                 <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8 m-10">
                     <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
                         <div>
                             <div>
-                                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500">
+                                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" className="h-8 w-8 text-white">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
                                     </svg>
@@ -274,7 +275,7 @@ const LandingPage = () => {
                     </div>
                 </div>
             </div>
-            {/* </div> */}
+            </section>
             <footer className="w-full bg-blue-800 p-4 text-center">
                 {/* <p>© 2024 Postpone. All rights reserved.</p> */}
 
@@ -359,7 +360,7 @@ const LandingPage = () => {
                                     </svg>
                                 </div>
                                 <div className="ml-[18px]">
-                                    <a href="tel:+911800123444" className="font-Inter text-[14px] font-medium text-white">
+                                    <a href="tel:+233-54865151" className="font-Inter text-[14px] font-medium text-white">
                                         +233-54865151
                                     </a>
                                     <p className="font-Inter text-[12px] font-medium text-white">Support Number</p>

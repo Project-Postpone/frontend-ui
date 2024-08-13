@@ -109,6 +109,16 @@ import React from "react"
 import img1 from "../assets/images/img1.jpg"
 
 const Login = () => {
+//   const [isSubmitting, setIsSubmitting] = useState(false);
+//   const navigate = useNavigate();
+
+
+//   const 
+//   { register,
+//      handleSubmit,
+//       formState: { errors }, 
+// } = useForm({reValidateMode:"onBlur",mode: "all"});
+
   return (
     <div className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
       <div className="bg-blue-200 rounded-2xl flex max-w-3xl p-5 items-center">

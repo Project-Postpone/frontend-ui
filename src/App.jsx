@@ -1,15 +1,23 @@
 import { useState } from 'react'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import DashBoardLayout from './pages/dashboard/Layout/dashBoardLayout'
+// import DashBoardLayout from './pages/dashboard/Layout/dashBoardLayout'
 import LogIn from './components/logIn'
 import SignUp from './components/signUp'
-import ScheduledMails from './pages/dashboard/pages/scheduledMails'
-import SendEmail from './pages/dashboard/pages/sendEmail'
+import ScheduledMails from './pages/dashboard/pages/yourletter'
+import SendEmail from './pages/dashboard/pages/notification'
 import LandingPage from './components/landingPage'
 import Contact from './components/contact'
 import ForgotPassword from './components/forgotPassword'
 import WriteLetter from './pages/writeLetter'
+import NewDashboardLayout from './pages/dashboard/Layout/newDashboardLayout'
+import Home from './pages/dashboard/pages/home'
+import YourLetter from './pages/dashboard/pages/yourletter'
+import Notification from './pages/dashboard/pages/notification'
+import SettingsPage from './pages/dashboard/pages/settings'
+import Settings from './pages/dashboard/pages/settings'
+import ManageAccountPage from './pages/dashboard/pages/manageAccount'
+import ManageAccount from './pages/dashboard/pages/manageAccount'
 
 
 function App() {
@@ -42,15 +50,27 @@ function App() {
     },
     {
       path:"/dashboard",
-      element: <DashBoardLayout/>,
+      element: <NewDashboardLayout/>,
       children:[
         {
-        index :"true",
-        element:<ScheduledMails/>
+        index : true,
+        element:<Home/>
         },
         {
-          index:"/dashboard",
-          element:<SendEmail/>
+          path :"/dashboard/yourletter",
+          element:<YourLetter/>
+        },
+        {
+          path :"/dashboard/notification",
+          element:<Notification/>
+        },
+        {
+          path :"/dashboard/settings",
+          element:<Settings/>
+        },
+        {
+          path :"/dashboard/manageaccount",
+          element:<ManageAccount/>
         }
       ]
     },
