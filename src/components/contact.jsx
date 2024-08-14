@@ -14,7 +14,7 @@ const Contact = () => {
         <div className="text-white relative px-4 py-10 bg-blue-200 shadow-lg sm:rounded-3xl sm:p-20">
           <div className="text-center pb-6">
             <h1 className="text-3xl">Contact Us!</h1>
-            <p className="text-gray-300">
+            <p className="text-gray-700">
               Fill up the form below to send us a message.
             </p>
           </div>
@@ -45,12 +45,12 @@ const Contact = () => {
             ></textarea>
             <div className="flex justify-between">
               <input
-                className="shadow bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="shadow bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
                 value="Send ➤"
               />
               <input
-                className="shadow bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="shadow bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="reset"
               />
             </div>

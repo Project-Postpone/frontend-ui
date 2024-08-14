@@ -14,7 +14,7 @@ const ManageAccount = () => {
 
   return (
     // <DashboardLayout>
-      <div className="bg-white flex p-8 rounded-lg shadow-lg">
+      <div className="bg-white flex relative w-full h-screen p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold mb-6">Manage Account</h1>
         <div className="space-y-8">
           <div className="flex items-center space-x-6">

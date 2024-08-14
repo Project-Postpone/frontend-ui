@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
-// import img1 from "../assets/images/img1.jpg"
+
+import image4 from "../assets/images/image4.jpg"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useForm } from "react-hook-form"
 
 
 function Copyright() {
@@ -16,51 +19,28 @@ function Copyright() {
 }
 
 export default function SignUp() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    allowExtraEmails: false,
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
-  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(formData);
-  };
+  const
+    { register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({ reValidateMode: "onBlur", mode: "all" });
+
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    setIsSubmitting(true);
+  }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md">
-        <div className="bg-white shadow-md rounded-lg p-8">
-        {/* <div>
-            <img src="img1" alt='' className="w-32 mx-auto" />
-          </div> */}
-          <div className="flex justify-center mb-4">
-            <div className="bg-blue-500 p-3 rounded-full">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 10a1 1 0 112 0v5a1 1 0 11-2 0v-5zm1-7a1 1 0 110 2 1 1 0 010-2z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
+    <div className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
+      <div className="bg-blue-200 rounded-2xl flex max-w-3xl p-5 items-center">
+        <div className="md:w-1/2 px-8">
           <h1 className="text-center text-2xl font-bold mb-6">Sign up</h1>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid grid-cols-1 gap-4 mb-4">
               <div>
                 <label
@@ -71,14 +51,12 @@ export default function SignUp() {
                 </label>
                 <input
                   id="firstName"
-                  name="firstName"
                   type="text"
                   required
                   autoComplete="given-name"
                   autoFocus
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
+                  {...register("firstName", { required: "FirstName is required" })}
                 />
               </div>
               <div>
@@ -90,13 +68,11 @@ export default function SignUp() {
                 </label>
                 <input
                   id="lastName"
-                  name="lastName"
                   type="text"
                   required
                   autoComplete="family-name"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
+                  {...register("lastName", { required: "LastName is required" })}
                 />
               </div>
               <div>
@@ -108,14 +84,27 @@ export default function SignUp() {
                 </label>
                 <input
                   id="email"
-                  name="email"
                   type="email"
-                  required
                   autoComplete="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
+                  {...register("email", { required: "Email is required" })}
                 />
+              </div>
+              <div>
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="userName"
+                >
+                  UserName
+                </label>
+              <input
+              id="userName"
+              type="text"
+              placeholder="Username"
+
+              className="peer h-11 w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700 placeholder-transparent focus:border-[#63AFFF] focus:outline-none"
+              {...register("userName", { required: "User Name is required" })}
+              />
               </div>
               <div>
                 <label
@@ -126,21 +115,19 @@ export default function SignUp() {
                 </label>
                 <input
                   id="password"
-                  name="password"
+
                   type="password"
                   required
                   autoComplete="new-password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
+                  {...register("password", { required: "Password is required" })}
                 />
               </div>
               <div className="flex items-center">
                 <input
                   name="allowExtraEmails"
                   type="checkbox"
-                  checked={formData.allowExtraEmails}
-                  onChange={handleChange}
                   className="mr-2 leading-tight"
                 />
                 <label className="text-gray-700 text-sm font-bold">
@@ -150,7 +137,7 @@ export default function SignUp() {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-400 border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-blue-300 font-medium"
             >
               Sign Up
             </button>
@@ -160,8 +147,16 @@ export default function SignUp() {
               </a>
             </div>
           </form>
+          
         </div>
-        <Copyright />
+        <div className="md:block hidden w-1/2">
+            <img
+              className="rounded-2xl h-[500px] w-[500px]"
+              src={image4}
+              alt="signup form"
+            />
+          </div>
+        {/* <Copyright /> */}
       </div>
     </div>
   );

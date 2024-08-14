@@ -6,7 +6,7 @@ const NewDashboardLayout = ({ children }) => {
   return (
     <div className="flex">
       <SideBar/>
-      <div className="flex-1 p-8 bg-gray-100">
+      <div className="flex-1 relative w-full p-8 bg-gray-100">
         {children}
       </div>
       <Outlet/>
