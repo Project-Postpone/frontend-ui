@@ -1,16 +1,35 @@
 import React from 'react'
-import SideBar from '../../../components/sidebar'
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
+import Navbar from "../../../components/navbar"
+import Sidebar from '../../../components/sidebar';
+
 
 const NewDashboardLayout = ({ children }) => {
   return (
-    <div className="flex">
-      <SideBar/>
-      <div className="flex-1 relative w-full p-8 bg-gray-100">
-        {children}
+    <div className="h-screen flex flex-col">
+      {/* Navbar at the top */}
+      <Navbar />
+
+      <div className="flex flex-1">
+        {/* Sidebar on the left */}
+        <Sidebar/>
+
+        {/* Main content area */}
+        <main className="flex-1 p-8 bg-gray-50 overflow-y-auto">
+          {children}
+        </main>
+        <Outlet/>
       </div>
-      <Outlet/>
     </div>
+  // return (
+  //   <div className="flex">
+  //     <Navbar/>
+  //     <SideBar/>
+  //     <div className="flex-1 relative w-full p-8 bg-gray-100">
+  //       {children}
+  //     </div>
+  //     <Outlet/>
+  //   </div>
   );
 };
 

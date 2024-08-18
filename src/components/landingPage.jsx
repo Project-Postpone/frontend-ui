@@ -11,9 +11,6 @@ const LandingPage = () => {
                 <div className="text-2xl font-bold">Postpone</div>
                 <div className="space-x-4">
                     <Link to="/writeletter" className="hover:underline">Write a Letter</Link>
-                    <Link to="/read-public-letters" className="hover:underline">Read Public Letters</Link>
-                    {/* <Link to="/education" className="hover:underline">Education</Link>
-                    <Link to="/business" className="hover:underline">Business</Link> */}
                     <Link to="/contact" className="hover:underline">Contact</Link>
                     <Link to="/signup" className="hover:underline">Sign Up</Link>
                     <Link to="/login" className="hover:underline">Login</Link>
