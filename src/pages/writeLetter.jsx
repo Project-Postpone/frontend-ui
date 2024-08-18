@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const WriteLetter= () => {
+const WriteLetter = () => {
 
   const [content, setContent] = useState('');
   const [file, setFile] = useState(null);
@@ -46,57 +46,100 @@ const WriteLetter= () => {
 
   return (
 
-      <div className="container mx-auto px-4 py-10 bg-blue-300">
-        <h1 className="text-3xl font-bold mb-6">Write a Letter to the Future</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+    <div className="container mx-auto px-4 py-10 bg-blue-300">
+      <h1 className="text-3xl  text-blue-900 font-bold mb-6">Postpone a Letter to the Future</h1>
+      <form onSubmit={handleSubmit}>
+        {/* <div className="mb-4">
             <label htmlFor="content" className="block text-gray-700 mb-2">
-              Write Here
+              
             </label>
             <textarea
-              id="content"
-              name="content"
-              rows="10"
-              className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring focus:ring-blue-500"
-              value={content}
-              onChange={handleChange}
+              
+              
+              
+              
             />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="file" className="block text-gray-700 mb-2">
-              Attach a File (Optional)
-            </label>
-            <input
-              type="file"
-              id="file"
-              name="file"
-              className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring focus:ring-blue-500"
-              onChange={handleFileChange}
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="smsNumber" className="block text-gray-700 mb-2">
-              Send SMS Notification (Optional)
-            </label>
-            <input
-              type="tel"
-              id="smsNumber"
-              name="smsNumber"
-              className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring focus:ring-blue-500"
-              value={smsNumber}
-              onChange={handleSmsChange}
-              placeholder="Enter phone number"
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring   
+          </div> */}
+        <textarea className="w-full p-2 mb-4 border text-blue-900 rounded-md focus:ring focus:ring-blue-500 focus:outline-none"
+          value={content} id="content"
+          onChange={handleChange} rows="10"
+          placeholder="Hello,"></textarea>
+
+        <div className="flex mb-4">
+          <label className="mr-2">Deliver in</label>
+          <select className="p-2 border rounded focus:ring focus:ring-blue-500 focus:outline-none">
+            <option></option>
+            <option>1 day</option>
+            <option>2 days</option>
+            <option>1 week</option>
+            <option>4 weeks</option>
+            <option>1 month</option>
+            <option>3 months</option>
+            <option>6 months</option>
+            <option>1 year</option>
+            <option>3 years</option>
+            <option>5 years</option>
+            <option>10 years</option>
+          </select>
+        </div>
+
+        <div className="flex mb-4">
+          <label className="mr-2">Select your audience</label>
+          <select className="p-2 border roundedfocus:ring focus:ring-blue-500 focus:outline-none">
+            <option></option>
+            <option>Yourself</option>
+            <option>Others</option>
+          </select>
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="file" className="block text-gray-700 mb-2">
+            Attach a File (Optional)
+          </label>
+          <input
+            type="file"
+            id="file"
+            name="file"
+            className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring focus:ring-blue-500"
+            onChange={handleFileChange}
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="smsNumber" className="block text-gray-700 mb-2">
+            Send SMS Notification (Optional)
+          </label>
+          <input
+            type="tel"
+            id="smsNumber"
+            name="smsNumber"
+            className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring focus:ring-blue-500"
+            value={smsNumber}
+            onChange={handleSmsChange}
+            placeholder="Enter phone number"
+          />
+        </div>
+        
+        <div className="mb-4">
+          <label htmlFor="Email" className="block text-blue-900 mb-2">
+            Email (Optional)
+          </label>
+          <input type="email"
+            id="email"
+            className="w-full p-2 border rounded mt-2"
+            // value={email}
+            // onChange={handleEmailChange}
+            placeholder="Please enter an email"
+          />
+        </div>
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring   
  focus:ring-blue-500"
-          >
-            Send Letter
-          </button>
-        </form>
-      </div>
+        >
+          Postpone
+        </button>
+      </form>
+    </div>
   )
 }
 //   const [email, setEmail] = useState('');
