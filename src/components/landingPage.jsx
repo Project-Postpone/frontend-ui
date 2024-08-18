@@ -1,14 +1,17 @@
 import { LucideYoutube } from 'lucide-react';
 import React from 'react'
 import { Link } from 'react-router-dom';
-import women2 from "../assets/images/women2.png"
+import cell from "../assets/images/cell.jpeg"
 import woman from "../assets/images/woman.mp4"
+import view from "../assets/images/view.jpeg"
+import download from "../assets/images/download.jpeg"
+import man from "../assets/images/man.jpeg"
 
 const LandingPage = () => {
     return (
         <div className="min-h-screen flex flex-col items-center text-white">
             <nav className="w-full flex justify-between items-center p-4 bg-blue-700">
-                <div className="text-2xl font-bold">Postpone</div>
+                <div className="text-2xl font-bold"> Postpone</div>
                 <div className="space-x-4">
                     <Link to="/writeletter" className="hover:underline">Write a Letter</Link>
                     <Link to="/contact" className="hover:underline">Contact</Link>
@@ -69,13 +72,13 @@ const LandingPage = () => {
                             </h2>
 
                             <h3 className="mt-6 md:mt-10 text-md lg:text-xl text-center md:text-left text-black font-light tracking-wider leading-relaxed">
-                                Postpone allows you to send letters to your future self. Write about your hopes, dreams, or just how your day went. It's a great way to reflect and see how much you've grown.
+                                Postpone allows you to send letters to your future self, and with the features of attaching a file, videos and images to the message Write about your hopes, dreams, or just how your day went. It's a great way to reflect and see how much you've grown.
                             </h3>
 
                         </div>
 
                         <div className="w-full h-[500px] md:w-1/2 flex justify-center">
-                            <img src={women2} alt="Hero" />
+                            <img src={cell} alt="Hero" />
                         </div>
 
                     </div>
@@ -102,7 +105,7 @@ const LandingPage = () => {
                                         alt="Latest Milling Machinery"
                                     />
                                 </div>
-                                <h2 className="title-font font-regular text-2xl text-white hover:text-indigo-500">
+                                <h2 className="title-font font-regular text-2xl text-white hover:text-blue-500">
                                     Latest App
                                 </h2>
                             </div>
@@ -132,7 +135,7 @@ const LandingPage = () => {
                                         alt="Time Efficiency"
                                     />
                                 </div>
-                                <h2 className="title-font font-regular text-2xl text-black hover:text-blue-500">
+                                <h2 className="title-font font-regular text-2xl text-white hover:text-blue-500">
                                     Time Efficiency
                                 </h2>
                             </div>
@@ -147,7 +150,7 @@ const LandingPage = () => {
                                         alt="Expertise in Industry"
                                     />
                                 </div>
-                                <h2 className="title-font font-regular text-2xl text-black hover:text-blue-500">
+                                <h2 className="title-font font-regular text-2xl text-white hover:text-blue-500">
                                     Experts
                                 </h2>
                             </div>
@@ -198,12 +201,12 @@ const LandingPage = () => {
                                     </span>
                                 </div>
                                 <div className="mt-6">
-                                    <h2 className="text-3xl font-bold tracking-tight text-black">Short Message Service(SMS)</h2>
+                                    <h2 className="text-3xl font-bold tracking-tight text-blue-900">Short Message Service(SMS)</h2>
                                     <p className="mt-4 text-lg text-white">
                                         This product utilizes advanced SMS algorithms to send message, enabling it to accurately process and analyze text-based inputs.
                                     </p>
                                     <div className="mt-6">
-                                        <a className="inline-flex rounded-lg bg-indigo-500 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-700 hover:bg-pink-700 hover:ring-pink-700" href="/login">
+                                        <a className="inline-flex rounded-lg bg-blue-400 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-blue-700 hover:bg-blue-700 hover:ring-blue-700" href="#">
                                             Learn More
                                         </a>
                                     </div>
@@ -212,7 +215,7 @@ const LandingPage = () => {
                         </div>
                         <div className="mt-12 sm:mt-16 lg:mt-0">
                             <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
-                                <img loading="lazy" width="647" height="486" className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" style={{ color: 'transparent' }} src="https://images.unsplash.com/photo-1569144157591-c60f3f82f137" alt="Feature 1" />
+                                <img loading="lazy" width="647" height="486" className="w-full rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" style={{ color: 'transparent' }} src={view} alt="Feature 1" />
                             </div>
                         </div>
                     </div>
@@ -224,19 +227,19 @@ const LandingPage = () => {
                         <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:col-start-2">
                             <div>
                                 <div>
-                                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500">
+                                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" className="h-8 w-8 text-white">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"></path>
                                         </svg>
                                     </span>
                                 </div>
                                 <div className="mt-6">
-                                    <h2 className="text-3xl font-bold tracking-tight text-black">Video And Image File</h2>
+                                    <h2 className="text-3xl font-bold tracking-tight text-blue-900">Video And Image File</h2>
                                     <p className="mt-4 text-lg text-white">
-                                        The product has a built-in file upload capabilities, allowing file and videos to be attached to mesages expressed with text.
+                                        The product has a built-in file upload capabilities, allowing files, images and videos to be attached to messages expressed with text.
                                     </p>
                                     <div className="mt-6">
-                                        <a className="inline-flex rounded-lg bg-indigo-500 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-700 hover:bg-pink-700 hover:ring-pink-700" href="/login">
+                                        <a className="inline-flex rounded-lg bg-blue-500 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-blue-700 hover:bg-blue-700 hover:ring-blue-700" href="#">
                                             Learn More
                                         </a>
                                     </div>
@@ -245,7 +248,7 @@ const LandingPage = () => {
                         </div>
                         <div className="mt-12 sm:mt-16 lg:mt-0">
                             <div className="-ml-48 pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
-                                <img alt="Inbox user interface" loading="lazy" width="647" height="486" className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none" style={{ color: 'transparent' }} src="https://images.unsplash.com/photo-1599134842279-fe807d23316e" />
+                                <img alt="Inbox user interface" loading="lazy" width="647" height="486" className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none" style={{ color: 'transparent' }} src={download} />
                             </div>
                         </div>
                     </div>
@@ -257,19 +260,19 @@ const LandingPage = () => {
                         <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
                             <div>
                                 <div>
-                                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500">
+                                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" className="h-8 w-8 text-white">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"></path>
                                         </svg>
                                     </span>
                                 </div>
                                 <div className="mt-6">
-                                    <h2 className="text-3xl font-bold tracking-tight text-black">Downloads</h2>
+                                    <h2 className="text-3xl font-bold tracking-tight text-blue-900">Downloads</h2>
                                     <p className="mt-4 text-lg text-white">
                                         The product features the capabilities, enabling it to engage in natural and context-aware conversations with users across various platforms and channels.
                                     </p>
                                     <div className="mt-6">
-                                        <a className="inline-flex rounded-lg bg-indigo-500 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-700 hover:bg-pink-700 hover:ring-pink-700" href="/login">
+                                        <a className="inline-flex rounded-lg bg-blue-500 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-blue-700 hover:bg-blue-700 hover:ring-blue-700" href="#">
                                             Learn More
                                         </a>
                                     </div>
@@ -278,7 +281,7 @@ const LandingPage = () => {
                         </div>
                         <div className="mt-12 sm:mt-16 lg:mt-0">
                             <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
-                                <img alt="Customer profile user interface" loading="lazy" width="647" height="486" className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" style={{ color: 'transparent' }} src="https://images.unsplash.com/photo-1531497865146-df17f7b0049c" />
+                                <img alt="Customer profile user interface" loading="lazy" width="647" height="486" className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" style={{ color: 'transparent' }} src={man} />
                             </div>
                         </div>
                     </div>

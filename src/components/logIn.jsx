@@ -33,10 +33,10 @@ const Login = () => {
 
       addToLocalStorage(res.data.accessToken);
 
-      // toast.success(res.data.message);
-      // setTimeout(() => {
-      //   navigate("/dasboard");
-      // }, 500);
+      toast.success(res.data.message);
+      setTimeout(() => {
+        navigate("/dasboard");
+      }, 500);
       
     } catch (error) {
       console.log(error);
@@ -62,7 +62,7 @@ const Login = () => {
               placeholder="Username"
               {...register("username", { required: "Username is required" })}
             />
-            {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+            {errors.username && <p className="text-red-500">{errors.username.message}</p>}
 
             <input
               className="p-2 rounded-xl border"
@@ -80,7 +80,7 @@ const Login = () => {
                 placeholder="Password"
                 {...register("password", { required: "password is required" })}
               />
-              {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+              {errors.password && <p className="text-red-500">{errors.password.message}</p>}
               {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

@@ -14,6 +14,7 @@ import YourLetter from './pages/dashboard/pages/yourletter'
 import Settings from './pages/dashboard/pages/settings'
 import ManageAccount from './pages/dashboard/pages/manageAccount'
 import Notification from './pages/dashboard/pages/notification'
+import CreateAccount from './components/createAccount'
 
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
     {
       path:"/forgotpassword",
       element:<ForgotPassword/>
+    },
+    {
+      path:"/createaccount",
+      element:<CreateAccount/>
     },
     {
       path:"/dashboard",
