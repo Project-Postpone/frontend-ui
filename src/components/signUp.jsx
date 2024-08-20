@@ -1,9 +1,9 @@
 
 import image4 from "../assets/images/image4.jpg"
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { useForm } from "react-hook-form"
-import { apiLogin, apiSignUp } from "../services/auth";
+// import { useState } from "react"
+// import { useNavigate } from "react-router-dom"
+// import { useForm } from "react-hook-form"
+// import { apiLogin, apiSignUp } from "../services/auth";
 
 
 // function Copyright() {
@@ -20,41 +20,41 @@ import { apiLogin, apiSignUp } from "../services/auth";
 // }
 
 export default function SignUp() {
-const [isSubmitting,setIsSubmitting] = useState(false);
-//   // const [isUsernameLoading, setIsUsernameLoading] = useState(false);
-  const navigate = useNavigate();
+// const [isSubmitting,setIsSubmitting] = useState(false);
+// //   // const [isUsernameLoading, setIsUsernameLoading] = useState(false);
+//   const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    // watch,
-    formState: { errors },
-  } = useForm({ reValidateMode: "onBlur", mode: "all" });
+//   const {
+//     register,
+//     handleSubmit,
+//     // watch,
+//     formState: { errors },
+//   } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
-  const LocalStorage = (accessToken) => {
-    localStorage.setItem("accessToken", accessToken);
+//   const LocalStorage = (accessToken) => {
+//     localStorage.setItem("accessToken", accessToken);
 
   
-  const onSubmit = async (data) => {
-    console.log(data);
-    setIsSubmitting(true);
+//   const onSubmit = async (data) => {
+//     console.log(data);
+//     setIsSubmitting(true);
 
-    try {
-      const res = await apiSignUp({
-        firstName: data.firstName,
-        lastName: data.lastName,
-        userName: data.username,
-        password: data.password,
-        email: data.email,
-      });
-      console.log(res.data);
-    } catch (error) {
-      console.log(error);
-      // toast.error("An error occured")
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+//     try {
+//       const res = await apiSignUp({
+//         firstName: data.firstName,
+//         lastName: data.lastName,
+//         userName: data.username,
+//         password: data.password,
+//         email: data.email,
+//       });
+//       console.log(res.data);
+//     } catch (error) {
+//       console.log(error);
+//       // toast.error("An error occured")
+//     } finally {
+//       setIsSubmitting(false);
+//     }
+//   };
 
   return (
     <div className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
@@ -63,7 +63,7 @@ const [isSubmitting,setIsSubmitting] = useState(false);
 
           <h1 className="text-center text-2xl font-bold mb-6">Sign up</h1>
 
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form >
 
             <div className="grid grid-cols-1 gap-4 mb-4">
 
@@ -81,9 +81,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   autoComplete="given-name"
                   autoFocus
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  {...register("firstName", { required: "FirstName is required" })}
+                  // {...register("firstName", { required: "FirstName is required" })}
                 />
-                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
               </div>
 
               <div>
@@ -99,9 +99,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   required
                   autoComplete="family-name"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  {...register("lastName", { required: "LastName is required" })}
+                  // {...register("lastName", { required: "LastName is required" })}
                 />
-                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
               </div>
 
               <div>
@@ -116,9 +116,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   type="email"
                   autoComplete="email"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  {...register("email", { required: "Email is required" })}
+                  // {...register("email", { required: "Email is required" })}
                 />
-                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
               </div>
 
               <div>
@@ -134,9 +134,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   placeholder="Username"
 
                   className="peer h-11 w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700 placeholder-transparent focus:border-[#63AFFF] focus:outline-none"
-                  {...register("userName", { required: "UserName is required" })}
+                  // {...register("userName", { required: "UserName is required" })}
                 />
-                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
               </div>
 
               <div>
@@ -152,9 +152,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   required
                   autoComplete="new-password"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  {...register("password", { required: "Password is required" })}
+                  // {...register("password", { required: "Password is required" })}
                 />
-                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
               </div>
 
               <div className="flex items-center">
@@ -201,4 +201,4 @@ const [isSubmitting,setIsSubmitting] = useState(false);
     </div>
   );
 }
-};
+// };
