@@ -15,7 +15,7 @@ const Navbar = () => {
                                 </div> */}
                                 <div className="hidden lg:ml-6 lg:block lg:space-x-4">
                                     <div className="flex">
-                                        <a href="#" className="bg-blue-700 bg-opacity-25 rounded-md py-2 px-3 text-xl font-medium text-white">Postpone</a>
+                                        <a href="#" className="bg-blue-700 bg-opacity-25 rounded-md py-2 px-3  text-2xl font-boldfont-medium text-blue-">Postpone</a>
                                         <a href="/writeletter" className="hover:bg-blue-700 rounded-md py-2 px-3 text-xl font-medium text-white">Write a letter</a>
                                         {/* <a href="/writeletter" className="hover:bg-sky-800 rounded-md py-2 px-3 text-sm font-medium text-white"></a>
                                         <a href="#" className="hover:bg-sky-800 rounded-md py-2 px-3 text-sm font-medium text-white"></a> */}

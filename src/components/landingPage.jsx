@@ -9,9 +9,9 @@ import man from "../assets/images/man.jpeg"
 
 const LandingPage = () => {
     return (
-        <div className="min-h-screen flex flex-col items-center text-blue-900">
-            <nav className="w-full flex justify-between items-center p-4 bg-blue-300">
-                <div className="text-2xl font-bold"> Postpone</div>
+        <div className="min-h-screen flex flex-col items-center text-blue-900  mx-auto px-4 bg-blue-200">
+            <nav className="w-full flex justify-between items-center p-4 bg-blue-200">
+            <a href="#" className="text-2xl font-bold">Postpone</a>
                 <div className="space-x-4">
                     <Link to="/writeletter" className="hover:underline">Write a Letter</Link>
                     <Link to="/contact" className="hover:underline">Contact</Link>
@@ -21,8 +21,9 @@ const LandingPage = () => {
             </nav>
 
             <div className="container mx-auto px-4 py-10">
-                <h1 className="text-3xl text-blue-900 rounded-lg font-bold mb-6 bg-blue-300">Postpone a Letter to the Future</h1>
-                <form className='bg-blue-300 rounded-lg'>
+                <h1 className="text-3xl text-blue-900 rounded-lg font-bold mb-6">Postpone a Letter to the Future</h1>
+
+                <form>
 
                     <textarea className="w-full p-2 mb-4 text-blue-900 rounded-md focus:ring focus:ring-blue-500 focus:outline-none"
                         id="content"

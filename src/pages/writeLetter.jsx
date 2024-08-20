@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const WriteLetter = () => {
 
   const [content, setContent] = useState('');
   const [file, setFile] = useState(null);
   const [smsNumber, setSmsNumber] = useState('');
+  const [email, setEmail] = useState("")
 
   const handleChange = (event) => {
     setContent(event.target.value);
@@ -17,6 +19,10 @@ const WriteLetter = () => {
   const handleSmsChange = (event) => {
     setSmsNumber(event.target.value);
   };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,7 +52,19 @@ const WriteLetter = () => {
 
   return (
 
-    <div className="container mx-auto px-4 py-10 bg-blue-300">
+    <div className="container mx-auto px-4 bg-blue-300">
+
+      <nav className="w-full flex justify-between items-center p-4 text-blue-900 bg-blue-300">
+        <a href="#" className="text-2xl font-bold ">Postpone</a>
+        <div className="space-x-4">
+          <Link to="/writeletter" className="hover:underline">Write a Letter</Link>
+          <Link to="/contact" className="hover:underline">Contact</Link>
+          <Link to="/signup" className="hover:underline">Sign Up</Link>
+          <Link to="/login" className=" hover:underline">Login</Link>
+        </div>
+      </nav>
+
+
       <h1 className="text-3xl  text-blue-900 font-bold mb-6">Postpone a Letter to the Future</h1>
       <form onSubmit={handleSubmit}>
         {/* <div className="mb-4">
@@ -82,6 +100,7 @@ const WriteLetter = () => {
             <option>10 years</option>
           </select>
         </div>
+        <div className="flex mb-4"></div>
 
         <div className="flex mb-4">
           <label className="mr-2">Select your audience</label>
@@ -118,7 +137,7 @@ const WriteLetter = () => {
             placeholder="Enter phone number"
           />
         </div>
-        
+
         <div className="mb-4">
           <label htmlFor="Email" className="block text-blue-900 mb-2">
             Email (Optional)
@@ -126,8 +145,8 @@ const WriteLetter = () => {
           <input type="email"
             id="email"
             className="w-full p-2 border rounded mt-2"
-            // value={email}
-            // onChange={handleEmailChange}
+            value={email}
+            onChange={handleEmailChange}
             placeholder="Please enter an email"
           />
         </div>
