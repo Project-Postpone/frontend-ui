@@ -3,35 +3,35 @@ import image4 from "../assets/images/image4.jpg"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
-import { apiSignUp } from "../services/auth";
+import { apiLogin, apiSignUp } from "../services/auth";
 
 
-function Copyright() {
-  return (
-    <p className="text-center text-gray-600 text-sm mt-5">
-      {'Copyright © '}
-      <a className="text-blue-500" href="">
-        Postpone
-      </a>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </p>
-  );
-}
+// function Copyright() {
+//   return (
+//     <p className="text-center text-gray-600 text-sm mt-5">
+//       {'Copyright © '}
+//       <a className="text-blue-500" href="">
+//         Postpone
+//       </a>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </p>
+//   );
+// }
 
 export default function SignUp() {
 const [isSubmitting,setIsSubmitting] = useState(false);
-  // const [isUsernameLoading, setIsUsernameLoading] = useState(false);
+//   // const [isUsernameLoading, setIsUsernameLoading] = useState(false);
   const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
-    watch,
+    // watch,
     formState: { errors },
   } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
-  const addToLocalStorage = (accessToken) => {
+  const LocalStorage = (accessToken) => {
     localStorage.setItem("accessToken", accessToken);
 
   
@@ -41,7 +41,6 @@ const [isSubmitting,setIsSubmitting] = useState(false);
 
     try {
       const res = await apiSignUp({
-        
         firstName: data.firstName,
         lastName: data.lastName,
         userName: data.username,
@@ -135,7 +134,7 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   placeholder="Username"
 
                   className="peer h-11 w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700 placeholder-transparent focus:border-[#63AFFF] focus:outline-none"
-                  {...register("userName", { required: "User Name is required" })}
+                  {...register("userName", { required: "UserName is required" })}
                 />
                 {errors.email && <p className="text-red-500">{errors.email.message}</p>}
               </div>
@@ -155,6 +154,7 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
                   {...register("password", { required: "Password is required" })}
                 />
+                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
               </div>
 
               <div className="flex items-center">

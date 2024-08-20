@@ -30,32 +30,43 @@ const LandingPage = () => {
                         rows="10"
                         placeholder="Hello,"></textarea>
 
-                    <div className="flex mb-4">
-                        <label className="mr-2">Deliver in</label>
-                        <select className="p-2 border rounded focus:ring focus:ring-blue-500 focus:outline-none">
-                            <option></option>
-                            <option>1 day</option>
-                            <option>2 days</option>
-                            <option>1 week</option>
-                            <option>4 weeks</option>
-                            <option>1 month</option>
-                            <option>3 months</option>
-                            <option>6 months</option>
-                            <option>1 year</option>
-                            <option>3 years</option>
-                            <option>5 years</option>
-                            <option>10 years</option>
-                        </select>
-                    </div>
+<div className="flex mb-4 flex-row">
+          <label className="mr-2">Deliver in</label>
+          <select className="p-1 h-8 border border-blue-900 rounded-md focus:ring focus:ring-blue-500 focus:outline-none outline-blue-900">
+            <option></option>
+            <option>1 day</option>
+            <option>2 days</option>
+            <option>1 week</option>
+            <option>4 weeks</option>
+            <option>1 month</option>
+            <option>3 months</option>
+            <option>6 months</option>
+            <option>1 year</option>
+            <option>3 years</option>
+            <option>5 years</option>
+            <option>10 years</option>
+          </select>
 
-                    <div className="flex mb-4">
-                        <label className="mr-2">Select your audience</label>
-                        <select className="p-2 border roundedfocus:ring focus:ring-blue-500 focus:outline-none">
-                            <option></option>
-                            <option>Yourself</option>
-                            <option>Others</option>
-                        </select>
-                    </div>
+          <div className="mt-1 items-center mx-5">
+            {/* <hr className="border-gray-700" /> */}
+            <p className="text-center text-sm">OR</p>
+            {/* <hr className="border-gray-300" /> */}
+          </div>
+          <div className="flex flex-row flex-1">
+            <label></label>
+            <input type="datetime-local"  className='rounded-md border border-blue-900 h-8 focus:ring focus:ring-blue-500 focus:outline-none outline-blue-900' placeholder=''/>
+          </div>
+        </div>
+
+
+        <div className="flex mb-4">
+          <label className="mr-2">Select your audience</label>
+          <select className="p-1 border border-blue-900 rounded-md focus:ring focus:ring-blue-500 focus:outline-none outline-blue-900">
+            <option></option>
+            <option>Yourself</option>
+            <option>Others</option>
+          </select>
+        </div>
 
                     <div className="mb-4">
                         <label htmlFor="file" className="block text-gray-700 mb-2">
