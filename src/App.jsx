@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // import DashBoardLayout from './pages/dashboard/Layout/dashBoardLayout'
@@ -15,19 +15,30 @@ import Settings from './pages/dashboard/pages/settings'
 import ManageAccount from './pages/dashboard/pages/manageAccount'
 import Notification from './pages/dashboard/pages/notification'
 import CreateAccount from './components/createAccount'
+import PreLoader from './components/preLoader'
 
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // 3 seconds delay, adjust as needed
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const router = createBrowserRouter([
-
+    
     {
-      index:true,
-      element:<LandingPage/>
+      index: true,
+      element: <LandingPage />
     },
+  
     {
-      path:"/writeletter",
-      element:<WriteLetter/>
+      path: "/writeletter",
+      element: <WriteLetter />
     },
     {
       path: '/login',
@@ -35,43 +46,43 @@ function App() {
     },
     {
       path: '/signup',
-      element:<SignUp/>
+      element: <SignUp />
     },
     {
-      path:"/contact",
-      element:<Contact/>
+      path: "/contact",
+      element: <Contact />
     },
     {
-      path:"/forgotpassword",
-      element:<ForgotPassword/>
+      path: "/forgotpassword",
+      element: <ForgotPassword />
     },
     {
-      path:"/createaccount",
-      element:<CreateAccount/>
+      path: "/createaccount",
+      element: <CreateAccount />
     },
     {
-      path:"/dashboard",
-      element: <NewDashboardLayout/>,
-      children:[
+      path: "/dashboard",
+      element: <NewDashboardLayout />,
+      children: [
         {
-        index : true,
-        element:<Home/>
+          index: true,
+          element: <Home />
         },
         {
-          path :"/dashboard/yourletter",
-          element:<YourLetter/>
+          path: "/dashboard/yourletter",
+          element: <YourLetter />
         },
         {
-          path :"/dashboard/notification",
-          element:<Notification/>
+          path: "/dashboard/notification",
+          element: <Notification />
         },
         {
-          path :"/dashboard/settings",
-          element:<Settings/>
+          path: "/dashboard/settings",
+          element: <Settings />
         },
         {
-          path :"/dashboard/manageaccount",
-          element:<ManageAccount/>
+          path: "/dashboard/manageaccount",
+          element: <ManageAccount />
         }
       ]
     },
@@ -79,9 +90,13 @@ function App() {
 
   return (
     <>
+      {loading ? (
+        <PreLoader />  // Display the Preloader component while loading
+      ) : (
       <RouterProvider router={router} />
+    )}
     </>
-  )
+  );
 }
 
 export default App

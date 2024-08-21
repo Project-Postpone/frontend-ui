@@ -15,7 +15,7 @@ const NewDashboardLayout = ({ children }) => {
         <Sidebar/>
 
         {/* Main content area */}
-        <main className="flex-1 p-8 bg-gray-50 overflow-y-auto">
+        <main className="flex-1 p-8 h-screen flex flex-col overflow-y-auto">
           {children}
         </main>
         <Outlet/>

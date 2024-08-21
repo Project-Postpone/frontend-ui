@@ -31,7 +31,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/dashboard/notifications" className="flex gap-x-4 items-center mt-auto hover:bg-blue-700 hover:rounded-md p-2 text-white"><BellRingIcon />Notification
+          <Link to="/dashboard/notification" className="flex gap-x-4 items-center mt-auto hover:bg-blue-700 hover:rounded-md p-2 text-white"><BellRingIcon />Notification
 
           </Link>
         </li>

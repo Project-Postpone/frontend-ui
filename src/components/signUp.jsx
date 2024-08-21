@@ -1,5 +1,9 @@
 
+import { useState } from "react";
 import image4 from "../assets/images/image4.jpg"
+import { apiSignUp } from "../services/auth";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 // import { useState } from "react"
 // import { useNavigate } from "react-router-dom"
 // import { useForm } from "react-hook-form"
@@ -20,41 +24,45 @@ import image4 from "../assets/images/image4.jpg"
 // }
 
 export default function SignUp() {
-// const [isSubmitting,setIsSubmitting] = useState(false);
+const [isSubmitting,setIsSubmitting] = useState(false);
 // //   // const [isUsernameLoading, setIsUsernameLoading] = useState(false);
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//   const {
-//     register,
-//     handleSubmit,
-//     // watch,
-//     formState: { errors },
-//   } = useForm({ reValidateMode: "onBlur", mode: "all" });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
-//   const LocalStorage = (accessToken) => {
-//     localStorage.setItem("accessToken", accessToken);
+  const LocalStorage = (accessToken) => {
+    localStorage.setItem("accessToken", accessToken);
 
   
-//   const onSubmit = async (data) => {
-//     console.log(data);
-//     setIsSubmitting(true);
+  const onSubmit = async (data) => {
+    console.log(data);
+    setIsSubmitting(true);
 
-//     try {
-//       const res = await apiSignUp({
-//         firstName: data.firstName,
-//         lastName: data.lastName,
-//         userName: data.username,
-//         password: data.password,
-//         email: data.email,
-//       });
-//       console.log(res.data);
-//     } catch (error) {
-//       console.log(error);
-//       // toast.error("An error occured")
-//     } finally {
-//       setIsSubmitting(false);
-//     }
-//   };
+    try {
+      const res = await apiSignUp({
+        firstName:data.firstName,
+        lastName:data.lastName,
+        userName:data.username,
+        password:data.password,
+        email:data.email,
+      });
+
+      console.log(res.data);
+
+      LocalStorage(res.data.accessToken);
+      navigate("/login");
+
+    } catch (error) {
+      console.log("An error occurred",error);
+      // toast.error("An error occured")
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
@@ -81,9 +89,9 @@ export default function SignUp() {
                   autoComplete="given-name"
                   autoFocus
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  // {...register("firstName", { required: "FirstName is required" })}
+                  {...register("firstName", { required: "FirstName is required" })}
                 />
-                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
+                {errors.firstname && <p className="text-red-500">{errors.firstname.message}</p>}
               </div>
 
               <div>
@@ -99,9 +107,9 @@ export default function SignUp() {
                   required
                   autoComplete="family-name"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  // {...register("lastName", { required: "LastName is required" })}
+                  {...register("lastName", { required: "LastName is required" })}
                 />
-                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
+                {errors.lastname && <p className="text-red-500">{errors.lastname.message}</p>}
               </div>
 
               <div>
@@ -116,9 +124,9 @@ export default function SignUp() {
                   type="email"
                   autoComplete="email"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  // {...register("email", { required: "Email is required" })}
+                  {...register("email", { required: "Email is required" })}
                 />
-                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
+                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
               </div>
 
               <div>
@@ -134,9 +142,9 @@ export default function SignUp() {
                   placeholder="Username"
 
                   className="peer h-11 w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700 placeholder-transparent focus:border-[#63AFFF] focus:outline-none"
-                  // {...register("userName", { required: "UserName is required" })}
+                  {...register("userName", { required: "UserName is required" })}
                 />
-                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
+                {errors.username && <p className="text-red-500">{errors.username.message}</p>}
               </div>
 
               <div>
@@ -152,9 +160,9 @@ export default function SignUp() {
                   required
                   autoComplete="new-password"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  // {...register("password", { required: "Password is required" })}
+                  {...register("password", { required: "Password is required" })}
                 />
-                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
+                {errors.password && <p className="text-red-500">{errors.password.message}</p>}
               </div>
 
               <div className="flex items-center">
@@ -172,9 +180,10 @@ export default function SignUp() {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="bg-blue-400 border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-blue-300 font-medium"
             >
-              Sign Up
+              {isSubmitting ? "Signing Up..." : "Sign Up"}
             </button>
 
             <div className="flex justify-end mt-4">
@@ -201,4 +210,4 @@ export default function SignUp() {
     </div>
   );
 }
-// };
+};

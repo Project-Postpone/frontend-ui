@@ -14,7 +14,7 @@ const Settings = () => {
 
   return (
     // <NewDashboardLayout>
-      <div className="flex w-full relative p-8 rounded-lg shadow-lg">
+      <div className="flex w-full relative p-8 rounded-lg shadow-lg h-screen flex-col">
         <h1 className="text-2xl font-bold mb-6">Settings</h1>
         <div className="space-y-8">
           <div>
