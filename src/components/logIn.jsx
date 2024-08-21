@@ -11,51 +11,51 @@ const Login = () => {
   const navigate = useNavigate();
 
 
-  const
-    { register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm({ reValidateMode: "onBlur", mode: "all" });
+//   const
+//     { register,
+//       handleSubmit,
+//       formState: { errors },
+//     } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
-  const addToLocalStorage = (accessToken, user) => {
-    localStorage.setItem("accessToken", accessToken);
-    localStorage.setItem("firstName", user.firstName);
-    localStorage.setItem("lastName", user.lastName);
-    localStorage.setItem("userName", user.userName);
-  };
+//   const addToLocalStorage = (accessToken, user) => {
+//     localStorage.setItem("accessToken", accessToken);
+//     localStorage.setItem("firstName", user.firstName);
+//     localStorage.setItem("lastName", user.lastName);
+//     localStorage.setItem("userName", user.userName);
+//   };
 
-  // const handleSubmit = () => {
-  //   // Example toast usage
-  //   toast.success('User logged in successfully');
-  // };
+//   // const handleSubmit = () => {
+//   //   // Example toast usage
+//   //   toast.success('User logged in successfully');
+//   // };
 
-};
-const onSubmit = async (data) => {
-  console.log(data);
-  setIsSubmitting(true);
+// };
+// const onSubmit = async (data) => {
+//   console.log(data);
+//   setIsSubmitting(true);
 
-  try {
-    const res = await apiLogin({
-      userName: data.username,
-      password: data.password,
-    });
+//   try {
+//     const res = await apiLogin({
+//       userName: data.username,
+//       password: data.password,
+//     });
 
-    addToLocalStorage(res.data.accessToken);
+//     addToLocalStorage(res.data.accessToken);
 
-    toast.success(res.data.message);
+//     toast.success(res.data.message);
 
-    console.log(res.data);
+//     console.log(res.data);
 
-    // toast.success(res.data.message);
-    setTimeout(() => {
-      navigate("/dashboard");
-    }, 500);
+//     // toast.success(res.data.message);
+//     setTimeout(() => {
+//       navigate("/dashboard");
+//     }, 500);
 
-  } catch (error) {
-    toast.error("An error occurred");
-  } finally {
-    setIsSubmitting(false);
-  }
+//   } catch (error) {
+//     toast.error("An error occurred");
+//   } finally {
+//     setIsSubmitting(false);
+//   }
 
 
 return (
@@ -67,22 +67,22 @@ return (
           Welcome Back!
         </p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <form className="flex flex-col gap-4">
           <input
             className="p-2 mt-8 rounded-xl border"
             type="text"
             placeholder="Username"
-            {...register("username", { required: "Username is required" })}
+            // {...register("username", { required: "Username is required" })}
           />
-          {errors.username && <p className="text-red-500">{errors.username.message}</p>}
+          {/* {errors.username && <p className="text-red-500">{errors.username.message}</p>} */}
 
           <input
             className="p-2 rounded-xl border"
             type="text"
             placeholder="Email"
-            {...register("email", { required: "Email is required" })}
+            // {...register("email", { required: "Email is required" })}
           />
-          {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+          {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
 
           <div className="relative">
             <input
@@ -90,9 +90,9 @@ return (
               type="password"
               id="password"
               placeholder="Password"
-              {...register("password", { required: "password is required" })}
+              // {...register("password", { required: "password is required" })}
             />
-            {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+            {/* {errors.password && <p className="text-red-500">{errors.password.message}</p>} */}
             {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

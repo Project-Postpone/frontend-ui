@@ -28,41 +28,41 @@ const [isSubmitting,setIsSubmitting] = useState(false);
 // //   // const [isUsernameLoading, setIsUsernameLoading] = useState(false);
   const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ reValidateMode: "onBlur", mode: "all" });
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
-  const LocalStorage = (accessToken) => {
-    localStorage.setItem("accessToken", accessToken);
+  // const LocalStorage = (accessToken) => {
+  //   localStorage.setItem("accessToken", accessToken);
 
   
-  const onSubmit = async (data) => {
-    console.log(data);
-    setIsSubmitting(true);
+  // const onSubmit = async (data) => {
+  //   console.log(data);
+  //   setIsSubmitting(true);
 
-    try {
-      const res = await apiSignUp({
-        firstName:data.firstName,
-        lastName:data.lastName,
-        userName:data.username,
-        password:data.password,
-        email:data.email,
-      });
+  //   try {
+  //     const res = await apiSignUp({
+  //       firstName:data.firstName,
+  //       lastName:data.lastName,
+  //       userName:data.username,
+  //       password:data.password,
+  //       email:data.email,
+  //     });
 
-      console.log(res.data);
+  //     console.log(res.data);
 
-      LocalStorage(res.data.accessToken);
-      navigate("/login");
+  //     LocalStorage(res.data.accessToken);
+  //     navigate("/login");
 
-    } catch (error) {
-      console.log("An error occurred",error);
-      // toast.error("An error occured")
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  //   } catch (error) {
+  //     console.log("An error occurred",error);
+  //     // toast.error("An error occured")
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   return (
     <div className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
@@ -89,9 +89,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   autoComplete="given-name"
                   autoFocus
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  {...register("firstName", { required: "FirstName is required" })}
+                  // {...register("firstName", { required: "FirstName is required" })}
                 />
-                {errors.firstname && <p className="text-red-500">{errors.firstname.message}</p>}
+                {/* {errors.firstname && <p className="text-red-500">{errors.firstname.message}</p>} */}
               </div>
 
               <div>
@@ -107,9 +107,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   required
                   autoComplete="family-name"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  {...register("lastName", { required: "LastName is required" })}
+                  // {...register("lastName", { required: "LastName is required" })}
                 />
-                {errors.lastname && <p className="text-red-500">{errors.lastname.message}</p>}
+                {/* {errors.lastname && <p className="text-red-500">{errors.lastname.message}</p>} */}
               </div>
 
               <div>
@@ -124,9 +124,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   type="email"
                   autoComplete="email"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  {...register("email", { required: "Email is required" })}
+                  // {...register("email", { required: "Email is required" })}
                 />
-                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                {/* {errors.email && <p className="text-red-500">{errors.email.message}</p>} */}
               </div>
 
               <div>
@@ -142,9 +142,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   placeholder="Username"
 
                   className="peer h-11 w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700 placeholder-transparent focus:border-[#63AFFF] focus:outline-none"
-                  {...register("userName", { required: "UserName is required" })}
+                  // {...register("userName", { required: "UserName is required" })}
                 />
-                {errors.username && <p className="text-red-500">{errors.username.message}</p>}
+                {/* {errors.username && <p className="text-red-500">{errors.username.message}</p>} */}
               </div>
 
               <div>
@@ -160,9 +160,9 @@ const [isSubmitting,setIsSubmitting] = useState(false);
                   required
                   autoComplete="new-password"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-[#63AFFF]"
-                  {...register("password", { required: "Password is required" })}
+                  // {...register("password", { required: "Password is required" })}
                 />
-                {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+                {/* {errors.password && <p className="text-red-500">{errors.password.message}</p>} */}
               </div>
 
               <div className="flex items-center">
@@ -210,4 +210,4 @@ const [isSubmitting,setIsSubmitting] = useState(false);
     </div>
   );
 }
-};
+// };
