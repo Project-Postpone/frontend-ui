@@ -28,6 +28,7 @@ const PreLoader = () => {
             backgroundImage: 'url(https://pageflutter.com/wp-content/uploads/2017/01/Love_Letter-wide_1024-800x600.jpg)',
           }}
         >
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="text-center text-black">
             <div className="flex justify-center items-center h-24">
               <div className="border-8 border-t-8 border-white border-t-blue-500 rounded-full w-12 h-12 animate-spin"></div>
